@@ -3,8 +3,13 @@ import Head from 'next/head';
 // import <RegistrationForm></RegistrationForm> from './../components/AddContactForm';
 // import ContactCard from './../components/ContactCard';
 import RegisterForm from '@/components/RegistrationForm';
+// 1. import `ChakraProvider` component
+import { ChakraProvider } from '@chakra-ui/react'
 
 import { PrismaClient, User, Prisma } from '@prisma/client';
+import type { NextPageWithLayout } from './_app'
+import type { ReactElement } from 'react'
+import Layout from './layout'
 
 //const prisma = new PrismaClient();
 
@@ -16,6 +21,20 @@ import { PrismaClient, User, Prisma } from '@prisma/client';
 //       initialContacts: users
 //     }
 //   };
+// }
+
+//chakra ui import per page
+
+// const Page: NextPageWithLayout = () => {
+//   return <p>hello world</p>
+// }
+
+// Page.getLayout = function getLayout(page: ReactElement) {
+//   return (
+//     <Layout>
+//       <NestedLayout>{page}</NestedLayout>
+//     </Layout>
+//   )
 // }
 
 async function saveContact(contact: Prisma.UserCreateInput) {
